@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ReturnScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    DontDestroy dontDestroy;
+
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            dontDestroy.GetComponent<DontDestroy>().DontDestroyMethod();
             SceneManager.LoadScene("Game", LoadSceneMode.Single);
         }
     }
