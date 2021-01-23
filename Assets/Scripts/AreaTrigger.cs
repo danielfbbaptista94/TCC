@@ -18,9 +18,9 @@ public class AreaTrigger : MonoBehaviour
         Debug.Log(_Scene.name);
 
         if (_Scene.name == "Sala1")
-            dialog = "Bang !!!";
+            dialog = "Bang !";
         else if (_Scene.name == "Sala2")
-            dialog = "Bang 2 !!!";
+            dialog = "Bang 2 !!";
         else
             dialog = "Bang !!!";
 
