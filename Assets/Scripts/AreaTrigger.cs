@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AreaTrigger : MonoBehaviour
@@ -9,37 +10,41 @@ public class AreaTrigger : MonoBehaviour
     public Text DialogText;
     private string dialog;
 
-    private float _Timer = 0.8f;
-    private int _Pass = 0;
+    private Scene _Scene;
 
     private void Start()
     {
-        dialog = "Bang !!!";
+        _Scene = SceneManager.GetActiveScene();
+        Debug.Log(_Scene.name);
+
+        if (_Scene.name == "Sala1")
+            dialog = "Bang !!!";
+        else if (_Scene.name == "Sala2")
+            dialog = "Bang 2 !!!";
+        else
+            dialog = "Bang !!!";
+
+        Debug.Log(dialog);
     }
 
-    private void Destroyer()
-    {
-        Destroy(DialogBox, _Timer);
-    }
+    //private void Destroyer()
+    //{
+    //    Destroy(DialogBox, _Timer);
+    //}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (_Pass == 0)
+        if (other.CompareTag("Player"))
         {
-            if (other.CompareTag("Player"))
+            if (DialogBox.activeInHierarchy)
             {
-                if (DialogBox.activeInHierarchy)
-                {
-                    DialogBox.SetActive(false);
-                }
-                else
-                {
-                    DialogBox.SetActive(true);
-                    DialogText.text = dialog;
-                    Destroyer();
-                }
+                DialogBox.SetActive(false);
             }
-            _Pass++;
+            else
+            {
+                DialogBox.SetActive(true);
+                DialogText.text = dialog;
+            }
         }
     }
 }
