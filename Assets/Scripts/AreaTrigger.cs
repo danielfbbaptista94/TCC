@@ -3,38 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class AreaTrigger : MonoBehaviour
 {
-    public GameObject DialogBox;
-    public Text DialogText;
-    private string dialog;
+    [SerializeField] private GameObject DialogBox;
+    [SerializeField] private TextMeshProUGUI DialogText;
+    [SerializeField] private string[] sentences;
+    private int index;
+    [SerializeField] private float typingSpeed;
 
+    [SerializeField] private GameObject continueButton;
+
+    private bool playerInRange = false;
     private Scene _Scene;
+    private string sala;
 
     private void Start()
     {
+        DialogText.text = "";
         _Scene = SceneManager.GetActiveScene();
-        Debug.Log(_Scene.name);
 
         if (_Scene.name == "Sala1")
-            dialog = "Bang !";
+            sala = "Sala1 !";
         else if (_Scene.name == "Sala2")
-            dialog = "Bang 2 !!";
+            sala = "Sala2 !!";
         else
-            dialog = "Bang !!!";
+            sala = "Sala3 !!!";
 
-        Debug.Log(dialog);
+        Debug.Log(sala);
     }
 
-    //private void Destroyer()
-    //{
-    //    Destroy(DialogBox, _Timer);
-    //}
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void Update()
     {
-        if (other.CompareTag("Player"))
+        if (DialogText.text == sentences[index])
+        {
+            continueButton.SetActive(true);
+        }
+
+        if (Input.GetKey(KeyCode.Space) && playerInRange)
         {
             if (DialogBox.activeInHierarchy)
             {
@@ -43,8 +50,64 @@ public class AreaTrigger : MonoBehaviour
             else
             {
                 DialogBox.SetActive(true);
-                DialogText.text = dialog;
+                StartCoroutine(Typing());
             }
         }
     }
+
+    IEnumerator Typing()
+    {
+        foreach (char letter in sentences[index].ToCharArray())
+        {
+            DialogText.text += letter;
+            yield return new WaitForSeconds(0.02f);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true;
+            //if (DialogBox.activeInHierarchy)
+            //{
+            //    DialogBox.SetActive(false);
+            //}
+            //else
+            //{
+            //    DialogBox.SetActive(true);
+            //    StartCoroutine(Typing());
+            //}
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
+            DialogText.text = "";
+            continueButton.SetActive(false);
+            DialogBox.SetActive(false);
+        }
+    }
+
+    public void ClickButtonContinue()
+    {
+        continueButton.SetActive(false);
+
+        if (index < sentences.Length - 1)
+        {
+            index++;
+            DialogText.text = "";
+            StartCoroutine(Typing());
+        }
+        else
+        {
+            DialogText.text = "";
+            continueButton.SetActive(false);
+            DialogBox.SetActive(false);
+        }
+    }
+
 }
