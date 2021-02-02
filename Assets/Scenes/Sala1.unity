@@ -2072,9 +2072,6 @@ MonoBehaviour:
   - Elemento 0
   - Elemento 1
   - Elemento 2
-  - Elemento 3
-  - Elemento 4
-  - Elemento 5
   typingSpeed: 0.02
   continueButton: {fileID: 875928395}
 --- !u!61 &1533145653

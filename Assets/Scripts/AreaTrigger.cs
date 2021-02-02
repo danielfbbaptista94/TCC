@@ -41,16 +41,21 @@ public class AreaTrigger : MonoBehaviour
             continueButton.SetActive(true);
         }
 
-        if (Input.GetKey(KeyCode.Space) && playerInRange)
+        if (!DialogBox.active)
         {
-            if (DialogBox.activeInHierarchy)
+            if (Input.GetKey(KeyCode.Space) && playerInRange)
             {
-                DialogBox.SetActive(false);
-            }
-            else
-            {
-                DialogBox.SetActive(true);
-                StartCoroutine(Typing());
+                index = 0;
+                if (DialogBox.activeInHierarchy)
+                {
+                    DialogBox.SetActive(false);
+                }
+                else
+                {
+                    DialogBox.SetActive(true);
+                    //DialogText.text = sentences[0];
+                    StartCoroutine(Typing());
+                }
             }
         }
     }
@@ -69,6 +74,7 @@ public class AreaTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            
             //if (DialogBox.activeInHierarchy)
             //{
             //    DialogBox.SetActive(false);
@@ -100,10 +106,12 @@ public class AreaTrigger : MonoBehaviour
         {
             index++;
             DialogText.text = "";
+            //DialogText.text = sentences[index];
             StartCoroutine(Typing());
         }
         else
         {
+            index = 0;
             DialogText.text = "";
             continueButton.SetActive(false);
             DialogBox.SetActive(false);
