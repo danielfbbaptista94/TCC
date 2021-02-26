@@ -19,6 +19,11 @@ public class AreaTrigger : MonoBehaviour
     private Scene _Scene;
     private string sala;
 
+/*    private void Awake()
+    {
+        DialogText = GetComponent<Text>();
+    }*/
+
     private void Start()
     {
         DialogText.text = "";
