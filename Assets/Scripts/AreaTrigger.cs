@@ -16,8 +16,6 @@ public class AreaTrigger : MonoBehaviour
     [SerializeField] private GameObject continueButton;
 
     private bool playerInRange = false;
-    private Scene _Scene;
-    private string sala;
 
 /*    private void Awake()
     {
@@ -27,21 +25,11 @@ public class AreaTrigger : MonoBehaviour
     private void Start()
     {
         DialogText.text = "";
-        _Scene = SceneManager.GetActiveScene();
-
-        if (_Scene.name == "Sala1")
-            sala = "Sala1 !";
-        else if (_Scene.name == "Sala2")
-            sala = "Sala2 !!";
-        else
-            sala = "Sala3 !!!";
-
-        Debug.Log(sala);
     }
 
     private void Update()
     {
-        if (DialogText.text == sentences[index])
+        if ( DialogText.text == sentences[index] && gameObject.name != "Door")
         {
             continueButton.SetActive(true);
         }
@@ -98,8 +86,10 @@ public class AreaTrigger : MonoBehaviour
         {
             playerInRange = false;
             DialogText.text = "";
-            continueButton.SetActive(false);
             DialogBox.SetActive(false);
+
+            if (gameObject.name != "Door")
+                continueButton.SetActive(false);
         }
     }
 
@@ -121,6 +111,17 @@ public class AreaTrigger : MonoBehaviour
             continueButton.SetActive(false);
             DialogBox.SetActive(false);
         }
+    }
+
+    public void ClickButtonYES()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ClickButtonNO()
+    {
+        DialogText.text = "";
+        DialogBox.SetActive(false);
     }
 
 }

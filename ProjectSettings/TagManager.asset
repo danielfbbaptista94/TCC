@@ -10,6 +10,7 @@ TagManager:
   - Sala1
   - Sala2
   - Sala3
+  - Alert
   layers:
   - Default
   - TransparentFX
