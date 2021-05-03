@@ -13,8 +13,5 @@ EditorBuildSettings:
     guid: 4cc4ea4accfefdd4f9977cfedc3e6741
   - enabled: 1
     path: Assets/Scenes/Sala2.unity
-    guid: b6e15adaf2c0e5b44b82b267670b67a1
-  - enabled: 1
-    path: Assets/Scenes/Sala3.unity
-    guid: 51ca76ac148bdcf488c1ae508831ce52
+    guid: 0916346801f292c4d8b0365a631f259a
   m_configObjects: {}
