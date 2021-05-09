@@ -17,11 +17,6 @@ public class AreaTrigger : MonoBehaviour
 
     private bool playerInRange = false;
 
-/*    private void Awake()
-    {
-        DialogText = GetComponent<Text>();
-    }*/
-
     private void Start()
     {
         DialogText.text = "";
@@ -46,7 +41,6 @@ public class AreaTrigger : MonoBehaviour
                 else
                 {
                     DialogBox.SetActive(true);
-                    //DialogText.text = sentences[0];
                     StartCoroutine(Typing());
                 }
             }
@@ -65,19 +59,7 @@ public class AreaTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
             playerInRange = true;
-            
-            //if (DialogBox.activeInHierarchy)
-            //{
-            //    DialogBox.SetActive(false);
-            //}
-            //else
-            //{
-            //    DialogBox.SetActive(true);
-            //    StartCoroutine(Typing());
-            //}
-        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -101,7 +83,6 @@ public class AreaTrigger : MonoBehaviour
         {
             index++;
             DialogText.text = "";
-            //DialogText.text = sentences[index];
             StartCoroutine(Typing());
         }
         else

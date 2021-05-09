@@ -45,7 +45,8 @@ public class SceneChange : MonoBehaviour
 
     public void ClickButtonYES()
     {
-        SceneManager.LoadScene(Sala, LoadSceneMode.Single);
+        // SceneManager.LoadScene(Sala, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync(Sala, LoadSceneMode.Single);
     }
 
     public void ClickButtonNO()

@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 4;
+    [SerializeField] private float speed = 4;
     
     private Rigidbody2D _rigidbody2D;
     private Vector3 _vector3;
-
     private Animator _animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         _vector3 = Vector3.zero;
