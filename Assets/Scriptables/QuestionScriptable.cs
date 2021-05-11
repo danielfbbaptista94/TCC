@@ -14,6 +14,7 @@ public struct Answer
 
 public enum AnswerTypes { Sigle, Multi }
 
+[CreateAssetMenu(fileName = "Question", menuName = "QuestionScriptableObject")]
 public class QuestionScriptable : ScriptableObject
 {
     [SerializeField] private string _info = string.Empty;
