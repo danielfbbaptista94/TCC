@@ -1,83 +1,131 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class QuizController : MonoBehaviour
 {
-    QuestionScriptable[] _questions = null;
-    [SerializeField] QuizEvent events = null;
+    [SerializeField] private GameObject _QuizPanel;
+    [SerializeField] private GameObject _QuizResultPanel;
+    [SerializeField] private TextMeshProUGUI _ScoreText;
 
-    private List<AnswerData> _pickedAnswers = new List<AnswerData>();
-    private List<int> _finishedQuestions = new List<int>();
-    private int currentQuestion = 0;
+    [SerializeField] private List<QuestionAndAnswer> _QnA;
+    [SerializeField] private GameObject[] _Options;
+    [SerializeField] private TextMeshProUGUI _QuestionText;
 
-    private string _sala;
+    private int currentQuestion;
+    private bool playerInRange = false;
+    private AreaTrigger areaTrigger = new AreaTrigger();
 
-    void Start()
+    private int correctAnswers = 0;
+
+    private void Start()
     {
-        _sala = SceneManager.GetActiveScene().name;
-        LoadQuestion();
-        Debug.Log(_sala);
-        Debug.Log("ANTES");
-        foreach (var question in _questions)
-        {
-            Debug.Log(question.Info);
-        }
-
-        // Display();
+        _ScoreText.text = "";
     }
 
-    void LoadQuestion()
+    [System.Obsolete]
+    private void Update()
     {
-        Object[] objects = Resources.LoadAll("Questions/" + _sala, typeof(QuestionScriptable));
-        _questions = new QuestionScriptable[objects.Length];
-
-        for (int i = 0; i < objects.Length; i++)
+        if (!_QuizPanel.active)
         {
-            _questions[i] = (QuestionScriptable) objects[i];
-        }
-    }
-
-    void Display()
-    {
-        EresedAnswers();
-        var question = GetRandomQuestion();
-
-        if (events.UpdateQuestionUI != null)
-        {
-            events.UpdateQuestionUI(question);
-        } else
-        {
-            Debug.LogWarning("Algo deu Errado no QuizController > UpdateQuestionUI");
-        }
-    }
-
-    public void EresedAnswers()
-    {
-        _pickedAnswers = new List<AnswerData>();
-    }
-
-    QuestionScriptable GetRandomQuestion()
-    {
-        var index = GetRandomQuestionIndex();
-        currentQuestion = index;
-
-        return _questions[currentQuestion];
-    }
-
-    int GetRandomQuestionIndex()
-    {
-        var random = 0;
-        if(_finishedQuestions.Count < _questions.Length)
-        {
-            do
+            if (Input.GetKey(KeyCode.Space) && playerInRange)
             {
-                random = Random.Range(0, _questions.Length);
-            } while (_finishedQuestions.Contains(random) || random == currentQuestion);
+                if (_QuizPanel.activeInHierarchy)
+                {
+                    _QuizPanel.SetActive(false);
+                }
+                else
+                {
+                    _ScoreText.text = "";
+                    _QuizPanel.SetActive(true);
+                    DisplayQuestion();
+                }
+            }
         }
-        return random;
+        
     }
 
-    public QuestionScriptable[] Questions { get { return _questions; } }
+    void DisplayQuestion()
+    {
+        if (_QnA.Count > 0)
+        {
+            currentQuestion = Random.Range(0, _QnA.Count);
+            _QuestionText.text = _QnA[currentQuestion].Question;
+            DisplayAnswers();
+        } 
+        else
+        {
+            GameOver();
+        }
+    }
+
+    void DisplayAnswers()
+    {
+        for (int i = 0; i < _Options.Length; i++)
+        {
+            _Options[i].GetComponent<AnswerData>().IsCorrect = false;
+            _Options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = _QnA[currentQuestion].Answers[i];
+
+            if (_QnA[currentQuestion].CorrectAnswer == i+1)
+            {
+                _Options[i].GetComponent<AnswerData>().IsCorrect = true;
+            }
+        }
+    }
+
+    public void Correct()
+    {
+        correctAnswers += 1;
+        _QnA.RemoveAt(currentQuestion);
+        DisplayQuestion();
+    }
+    
+    public void Wrong()
+    {
+        _QnA.RemoveAt(currentQuestion);
+        DisplayQuestion();
+    }
+
+    void GameOver()
+    {
+        _ScoreText.text = correctAnswers + " / " + _QnA.Count + "\n";
+
+        if (correctAnswers % 2 < _QnA.Count)
+        {
+            _ScoreText.text = "Favor tentar novamente !";
+        } 
+        else
+        {
+            _ScoreText.text = "A porta está liberada !";
+        }
+
+        _QuizPanel.SetActive(false);
+        _QuizResultPanel.SetActive(true);
+    }
+
+    public void ButtonRetry()
+    {
+        _QuizResultPanel.SetActive(false);
+        _QuizPanel.SetActive(true);
+        DisplayAnswers();
+    }
+    
+    public void ButtonOK()
+    {
+        _QuizResultPanel.SetActive(false);
+        areaTrigger.ChangeScene = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+            playerInRange = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+            _QuizPanel.SetActive(false);
+    }
 }

@@ -6,42 +6,42 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 4;
     
-    private Rigidbody2D _rigidbody2D;
-    private Vector3 _vector3;
-    private Animator _animator;
+    private Rigidbody2D _Rigidbody2D;
+    private Vector3 _Vector3;
+    private Animator _Animator;
 
     void Start()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
+        _Rigidbody2D = GetComponent<Rigidbody2D>();
+        _Animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
-        _vector3 = Vector3.zero;
-        _vector3.x = Input.GetAxisRaw("Horizontal");
-        _vector3.y = Input.GetAxisRaw("Vertical");
+        _Vector3 = Vector3.zero;
+        _Vector3.x = Input.GetAxisRaw("Horizontal");
+        _Vector3.y = Input.GetAxisRaw("Vertical");
         UpdateAnimationAndMovement();
     }
 
     void UpdateAnimationAndMovement()
     {
-        if (_vector3 != Vector3.zero)
+        if (_Vector3 != Vector3.zero)
         {
             MoveCharacter();
-            _animator.SetFloat("moveX", _vector3.x);
-            _animator.SetFloat("moveY", _vector3.y);
-            _animator.SetBool("moving", true);
+            _Animator.SetFloat("moveX", _Vector3.x);
+            _Animator.SetFloat("moveY", _Vector3.y);
+            _Animator.SetBool("moving", true);
         }
         else
         {
-            _animator.SetBool("moving", false);
+            _Animator.SetBool("moving", false);
         }
     }
 
     void MoveCharacter()
     {
-        _vector3.Normalize();
-        _rigidbody2D.MovePosition(transform.position + _vector3 * speed * Time.deltaTime);
+        _Vector3.Normalize();
+        _Rigidbody2D.MovePosition(transform.position + _Vector3 * speed * Time.deltaTime);
     }
 }

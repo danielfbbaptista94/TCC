@@ -7,40 +7,41 @@ using TMPro;
 
 public class AreaTrigger : MonoBehaviour
 {
-    [SerializeField] private GameObject DialogBox;
-    [SerializeField] private TextMeshProUGUI DialogText;
-    [SerializeField] private string[] sentences;
+    [SerializeField] private GameObject _DialogBox;
+    [SerializeField] private TextMeshProUGUI _DialogText;
+    [SerializeField] private string[] _Sentences;
+    [SerializeField] private float _TypingSpeed;
+    [SerializeField] private GameObject _ContinueButton;
+
     private int index;
-    [SerializeField] private float typingSpeed;
-
-    [SerializeField] private GameObject continueButton;
-
     private bool playerInRange = false;
+    private bool _ChangeScene = false;
 
     private void Start()
     {
-        DialogText.text = "";
+        _DialogText.text = "";
     }
 
+    [System.Obsolete]
     private void Update()
     {
-        if ( DialogText.text == sentences[index] && gameObject.name != "Door")
+        if ( _DialogText.text == _Sentences[index] && gameObject.name != "Door")
         {
-            continueButton.SetActive(true);
+            _ContinueButton.SetActive(true);
         }
 
-        if (!DialogBox.active)
+        if (!_DialogBox.active)
         {
             if (Input.GetKey(KeyCode.Space) && playerInRange)
             {
                 index = 0;
-                if (DialogBox.activeInHierarchy)
+                if (_DialogBox.activeInHierarchy)
                 {
-                    DialogBox.SetActive(false);
+                    _DialogBox.SetActive(false);
                 }
                 else
                 {
-                    DialogBox.SetActive(true);
+                    _DialogBox.SetActive(true);
                     StartCoroutine(Typing());
                 }
             }
@@ -49,9 +50,9 @@ public class AreaTrigger : MonoBehaviour
 
     IEnumerator Typing()
     {
-        foreach (char letter in sentences[index].ToCharArray())
+        foreach (char letter in _Sentences[index].ToCharArray())
         {
-            DialogText.text += letter;
+            _DialogText.text += letter;
             yield return new WaitForSeconds(0.02f);
         }
     }
@@ -67,42 +68,44 @@ public class AreaTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            DialogText.text = "";
-            DialogBox.SetActive(false);
+            _DialogText.text = "";
+            _DialogBox.SetActive(false);
 
             if (gameObject.name != "Door")
-                continueButton.SetActive(false);
+                _ContinueButton.SetActive(false);
         }
     }
 
     public void ClickButtonContinue()
     {
-        continueButton.SetActive(false);
+        _ContinueButton.SetActive(false);
 
-        if (index < sentences.Length - 1)
+        if (index < _Sentences.Length - 1)
         {
             index++;
-            DialogText.text = "";
+            _DialogText.text = "";
             StartCoroutine(Typing());
         }
         else
         {
             index = 0;
-            DialogText.text = "";
-            continueButton.SetActive(false);
-            DialogBox.SetActive(false);
+            _DialogText.text = "";
+            _ContinueButton.SetActive(false);
+            _DialogBox.SetActive(false);
         }
     }
 
     public void ClickButtonYES()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (ChangeScene)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ClickButtonNO()
     {
-        DialogText.text = "";
-        DialogBox.SetActive(false);
+        _DialogText.text = "";
+        _DialogBox.SetActive(false);
     }
 
+    public bool ChangeScene { get { return _ChangeScene; } set { _ChangeScene = value; } }
 }

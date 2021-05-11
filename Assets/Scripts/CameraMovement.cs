@@ -5,11 +5,11 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
 
-    public Transform target;
-    public float smoothing = 0.1f;
+    [SerializeField] private Transform target;
+    [SerializeField] private float smoothing = 0.1f;
 
-    public Vector2 maxPosition;
-    public Vector2 minPosition;
+    [SerializeField] private Vector2 maxPosition;
+    [SerializeField] private Vector2 minPosition;
 
     private void FixedUpdate() {
         if(transform.position != target.position) {

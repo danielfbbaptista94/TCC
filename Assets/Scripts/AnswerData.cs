@@ -6,15 +6,26 @@ using TMPro;
 
 public class AnswerData : MonoBehaviour
 {
-    [Header("UI Elements")]
-    [SerializeField] private TextMeshProUGUI infoTextObject;
-    [SerializeField] private Image toggle;
+    private bool _IsCorrect = false;
+    [SerializeField] private QuizController quiz;
 
-    [Header("Textures")]
-    [SerializeField] private Sprite uncheckedToggle;
-    [SerializeField] private Sprite checkedToggle;
+    public void Answer()
+    {
+        if (_IsCorrect)
+        {
+            Debug.Log("Resposta Correta.");
+            quiz.Correct();
+        }
+        else
+        {
+            Debug.Log("Resposta Incorreta.");
+            quiz.Wrong();
+        }
+    }
 
-    private int _answerIndex = -1;
-
-    public int AnswerIndex { get { return _answerIndex; } }
+    public bool IsCorrect 
+    { 
+        get { return _IsCorrect; } 
+        set { _IsCorrect = value; } 
+    }
 }
