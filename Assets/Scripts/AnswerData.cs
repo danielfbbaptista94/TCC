@@ -11,6 +11,7 @@ public class AnswerData : MonoBehaviour
 
     public void Answer()
     {
+        Debug.Log("ENTROU");
         if (_IsCorrect)
         {
             Debug.Log("Resposta Correta.");

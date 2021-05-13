@@ -97,6 +97,7 @@ public class AreaTrigger : MonoBehaviour
 
     public void ClickButtonYES()
     {
+        Debug.Log(ChangeScene);
         if (ChangeScene)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
