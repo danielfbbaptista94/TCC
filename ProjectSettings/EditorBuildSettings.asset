@@ -12,12 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Sala1.unity
     guid: 4cc4ea4accfefdd4f9977cfedc3e6741
   - enabled: 1
-    path: Assets/Scenes/Sala2.unity
-    guid: 801e7830c4d3b5e4c9d8e30e3467e54e
-  - enabled: 1
     path: Assets/Scenes/QuizSala1.unity
     guid: 8e8f9547916b82348a4c838a8888f330
   - enabled: 1
     path: Assets/Scenes/QuizSala2.unity
     guid: 23602ffbdb2368341b64da00c45b6b5c
+  - enabled: 1
+    path: Assets/Scenes/Puzzle1.unity
+    guid: f529c8818a43c714e90a0c8971643cf4
+  - enabled: 1
+    path: Assets/Scenes/Puzzle2.unity
+    guid: 04ab955dbf153d147a5b3d02ad15230b
+  - enabled: 1
+    path: Assets/Scenes/Puzzle3.unity
+    guid: dd3f5678660a8f343bbd77e13e46eb71
   m_configObjects: {}
