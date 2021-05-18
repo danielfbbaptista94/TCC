@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class PuzzleController : MonoBehaviour
 {
+    [SerializeField] private GameObject Texts;
     [SerializeField] private GameObject winText;
 
-    [SerializeField] private GameObject Texts;
-
-    // Use this for initialization
     void Start()
     {
         winText.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (PuzzleFisico.locked && PuzzlePsicologico.locked && PuzzleVirtual.locked)

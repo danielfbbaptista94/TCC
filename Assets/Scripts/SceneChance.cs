@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class QuizSceneChange : MonoBehaviour
+public class SceneChance : MonoBehaviour
 {
-    [SerializeField] private string _Quiz;
+    [SerializeField] private string _Scene;
     private bool playerInRange = false;
 
     void Update()
     {
         if (Input.GetKey(KeyCode.Space) && playerInRange)
-            SceneManager.LoadScene(_Quiz);
+            SceneManager.LoadScene(_Scene);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
