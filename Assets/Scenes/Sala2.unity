@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a64ae9cefef5546b6cfc2ae6f0e5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Scene: QuizSala1
+  _Scene: QuizSala2
 --- !u!1 &346280429
 GameObject:
   m_ObjectHideFlags: 0
@@ -5051,7 +5051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a64ae9cefef5546b6cfc2ae6f0e5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Scene: Puzzle1
+  _Scene: Puzzle2
 --- !u!1 &1771132401
 GameObject:
   m_ObjectHideFlags: 0
@@ -5110,7 +5110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0bf10cffa0bae224cb2420fa5fa11b21, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5be6c107e39c4fa45985754bf8125045, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

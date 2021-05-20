@@ -405,7 +405,7 @@ MonoBehaviour:
   - {fileID: 1084263777}
   - {fileID: 1024928408}
   _QuestionText: {fileID: 29375428}
-  _Sala: Sala1
+  _Sala: Sala3
 --- !u!4 &252388204
 Transform:
   m_ObjectHideFlags: 0

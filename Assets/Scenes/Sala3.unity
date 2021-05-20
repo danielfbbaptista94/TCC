@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a64ae9cefef5546b6cfc2ae6f0e5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Scene: QuizSala1
+  _Scene: QuizSala3
 --- !u!1 &346280429
 GameObject:
   m_ObjectHideFlags: 0
@@ -5051,7 +5051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a64ae9cefef5546b6cfc2ae6f0e5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Scene: Puzzle1
+  _Scene: Puzzle3
 --- !u!1 &1771132401
 GameObject:
   m_ObjectHideFlags: 0
