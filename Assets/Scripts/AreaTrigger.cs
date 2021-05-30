@@ -22,7 +22,6 @@ public class AreaTrigger : MonoBehaviour
         _DialogText.text = "";
     }
 
-    [System.Obsolete]
     private void Update()
     {
         if ( _DialogText.text == _Sentences[index] && gameObject.name != "Door")

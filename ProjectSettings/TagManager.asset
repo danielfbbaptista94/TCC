@@ -11,6 +11,7 @@ TagManager:
   - Sala2
   - Sala3
   - Alert
+  - Door
   layers:
   - Default
   - TransparentFX
