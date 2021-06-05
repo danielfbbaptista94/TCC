@@ -25,6 +25,10 @@ public class PuzzleController : MonoBehaviour
 
     public void ButtonOK ()
     {
+        winText.SetActive(false);
+        PuzzleFisico.locked = false;
+        PuzzlePsicologico.locked = false;
+        PuzzleVirtual.locked = false;
         SceneManager.LoadScene(_Scene);
     }
 }

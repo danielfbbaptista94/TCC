@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Texts: {fileID: 997346705}
-  winText: {fileID: 0}
+  winText: {fileID: 1657607188}
   _Scene: Sala2
 --- !u!4 &559715649
 Transform:
@@ -727,7 +727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5755156c878aa434d8af493d8ec68727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagePlace: {fileID: 343190345}
+  imagePlace: {fileID: 24206123}
 --- !u!61 &697254887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -826,7 +826,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -259.2, y: 170.8}
+  m_AnchoredPosition: {x: 232, y: 170.8}
   m_SizeDelta: {x: 89.99802, y: 22.499504}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1310764034
@@ -1221,7 +1221,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 224.5, y: 167.66}
+  m_AnchoredPosition: {x: -265, y: 167.66}
   m_SizeDelta: {x: 129.43446, y: 28.773499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1559123914
@@ -1473,6 +1473,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1657607186}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1657607188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6976758519233593346, guid: 6b8dab3f38e2cf0488e21ee53b626c17,
+    type: 3}
+  m_PrefabInstance: {fileID: 1657607186}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1727310435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,7 +1721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44d680735014dc4cb03d389c068f3cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagePlace: {fileID: 24206123}
+  imagePlace: {fileID: 343190345}
 --- !u!61 &1782184040
 BoxCollider2D:
   m_ObjectHideFlags: 0

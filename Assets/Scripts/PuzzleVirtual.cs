@@ -16,6 +16,7 @@ public class PuzzleVirtual : MonoBehaviour
 
     private void Start()
     {
+        locked = false;
         initialPosition = transform.position;
     }
 
