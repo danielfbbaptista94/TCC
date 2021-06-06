@@ -15,7 +15,10 @@ public class AreaTrigger : MonoBehaviour
 
     private int index;
     private bool playerInRange = false;
-    private bool _ChangeScene = false;
+
+    [SerializeField] private BoolValue booleans;
+    [SerializeField] private GameObject _ButtonSIM;
+    [SerializeField] private GameObject _ButtonNO;
 
     private void Start()
     {
@@ -24,7 +27,7 @@ public class AreaTrigger : MonoBehaviour
 
     private void Update()
     {
-        if ( _DialogText.text == _Sentences[index] && gameObject.name != "Door")
+        if (_DialogText.text == _Sentences[index] && gameObject.name != "Door")
         {
             _ContinueButton.SetActive(true);
         }
@@ -96,9 +99,15 @@ public class AreaTrigger : MonoBehaviour
 
     public void ClickButtonYES()
     {
-        Debug.Log(ChangeScene);
-        if (ChangeScene)
+        if (booleans.quiz && booleans.puzzle)
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else
+        {
+            _DialogText.text = "Favor jogar o game Quize e o Quebra-Cabeça para poder sair dessa Sala !";
+            StartCoroutine(ManageChangeScene());
+        }
     }
 
     public void ClickButtonNO()
@@ -107,5 +116,14 @@ public class AreaTrigger : MonoBehaviour
         _DialogBox.SetActive(false);
     }
 
-    public bool ChangeScene { get { return _ChangeScene; } set { _ChangeScene = value; } }
+    IEnumerator ManageChangeScene()
+    {
+        _ButtonSIM.SetActive(false);
+        _ButtonNO.SetActive(false);
+        yield return new WaitForSeconds(2.5f);
+        _DialogText.text = "";
+        _ButtonSIM.SetActive(true);
+        _ButtonNO.SetActive(true);
+        _DialogBox.SetActive(false);
+    }
 }

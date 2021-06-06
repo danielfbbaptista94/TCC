@@ -1082,6 +1082,9 @@ MonoBehaviour:
   - Deseja seguir para a proxima sala ?
   _TypingSpeed: 0.02
   _ContinueButton: {fileID: 0}
+  booleans: {fileID: 0}
+  _ButtonSIM: {fileID: 0}
+  _ButtonNO: {fileID: 0}
 --- !u!1 &510565182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,6 +1279,9 @@ MonoBehaviour:
     \xE9 uma forma de bullying."
   _TypingSpeed: 0.045
   _ContinueButton: {fileID: 868756672}
+  booleans: {fileID: 11400000, guid: 2f8b1bfd1f51efe468d01606ebdb05fb, type: 2}
+  _ButtonSIM: {fileID: 14937417}
+  _ButtonNO: {fileID: 871479919}
 --- !u!61 &849759002
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2764,7 +2770,23 @@ PrefabInstance:
         type: 3}
       propertyPath: _ContinueButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 868756672}
+    - target: {fileID: 1038733639821924692, guid: 1bfb3980e9273f1479cb581144572b92,
+        type: 3}
+      propertyPath: booleans
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f8b1bfd1f51efe468d01606ebdb05fb,
+        type: 2}
+    - target: {fileID: 1038733639821924692, guid: 1bfb3980e9273f1479cb581144572b92,
+        type: 3}
+      propertyPath: _ButtonSIM
+      value: 
+      objectReference: {fileID: 14937417}
+    - target: {fileID: 1038733639821924692, guid: 1bfb3980e9273f1479cb581144572b92,
+        type: 3}
+      propertyPath: _ButtonNO
+      value: 
+      objectReference: {fileID: 871479919}
     - target: {fileID: 1038733639821924694, guid: 1bfb3980e9273f1479cb581144572b92,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3436,6 +3458,9 @@ MonoBehaviour:
   - teste2
   _TypingSpeed: 0.02
   _ContinueButton: {fileID: 1887956623}
+  booleans: {fileID: 11400000, guid: 2f8b1bfd1f51efe468d01606ebdb05fb, type: 2}
+  _ButtonSIM: {fileID: 14937417}
+  _ButtonNO: {fileID: 871479919}
 --- !u!1 &1707348575
 GameObject:
   m_ObjectHideFlags: 0
@@ -4103,6 +4128,9 @@ MonoBehaviour:
   - teste2
   _TypingSpeed: 0.02
   _ContinueButton: {fileID: 1551557330}
+  booleans: {fileID: 11400000, guid: 2f8b1bfd1f51efe468d01606ebdb05fb, type: 2}
+  _ButtonSIM: {fileID: 14937417}
+  _ButtonNO: {fileID: 871479919}
 --- !u!61 &2030373683
 BoxCollider2D:
   m_ObjectHideFlags: 0

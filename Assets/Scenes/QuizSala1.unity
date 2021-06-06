@@ -406,6 +406,7 @@ MonoBehaviour:
   - {fileID: 1024928408}
   _QuestionText: {fileID: 29375428}
   _Sala: Sala1
+  booleans: {fileID: 11400000, guid: 4ce82ca6f3497254cb4bf4beb111cf74, type: 2}
 --- !u!4 &252388204
 Transform:
   m_ObjectHideFlags: 0

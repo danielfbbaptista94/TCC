@@ -295,7 +295,7 @@ RectTransform:
   - {fileID: 997346706}
   - {fileID: 511630115}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -584,7 +584,7 @@ Transform:
   m_LocalScale: {x: 6.388256, y: 6.388256, z: 6.388256}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &511630114 stripped
 GameObject:
@@ -630,6 +630,7 @@ MonoBehaviour:
   Texts: {fileID: 997346705}
   winText: {fileID: 511630114}
   _Scene: Sala1
+  booleans: {fileID: 11400000, guid: 4ce82ca6f3497254cb4bf4beb111cf74, type: 2}
 --- !u!4 &559715649
 Transform:
   m_ObjectHideFlags: 0
@@ -642,7 +643,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &697254883
 GameObject:
@@ -1500,7 +1501,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1782184036
 GameObject:

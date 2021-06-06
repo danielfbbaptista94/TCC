@@ -9,6 +9,8 @@ public class PuzzleController : MonoBehaviour
     [SerializeField] private GameObject winText;
     [SerializeField] private string _Scene;
 
+    [SerializeField] private BoolValue booleans;
+
     void Start()
     {
         winText.SetActive(false);
@@ -29,6 +31,7 @@ public class PuzzleController : MonoBehaviour
         PuzzleFisico.locked = false;
         PuzzlePsicologico.locked = false;
         PuzzleVirtual.locked = false;
+        booleans.puzzle = true;
         SceneManager.LoadScene(_Scene);
     }
 }

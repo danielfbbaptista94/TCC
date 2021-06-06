@@ -19,6 +19,8 @@ public class QuizController : MonoBehaviour
     private int correctAnswers = 0;
     private int countQuestion = 0;
 
+    [SerializeField] private BoolValue booleans;
+
     private void Start()
     {
         countQuestion = _QnA.Count;
@@ -84,12 +86,9 @@ public class QuizController : MonoBehaviour
     
     public void ButtonOK()
     {
-        if (_Sala == "Sala1")
-            SceneManager.LoadScene("Sala1");
-        else if (_Sala == "Sala2")
-            SceneManager.LoadScene("Sala2");
-        else
-            SceneManager.LoadScene("Sala3");
+        booleans.quiz = true;
+        Debug.Log(booleans.quiz);
+        SceneManager.LoadScene(_Sala);
     }
 
 }

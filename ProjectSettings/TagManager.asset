@@ -12,6 +12,8 @@ TagManager:
   - Sala3
   - Alert
   - Door
+  - ButtonSIM
+  - ButtonNO
   layers:
   - Default
   - TransparentFX

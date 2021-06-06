@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Sala1.unity
     guid: 4cc4ea4accfefdd4f9977cfedc3e6741
   - enabled: 1
-    path: Assets/Scenes/Sala3.unity
-    guid: 46d08806bdbf1b64186b9194671d0e04
-  - enabled: 1
     path: Assets/Scenes/Sala2.unity
     guid: e04a33de793f7da40bcf885b2c731e4a
+  - enabled: 1
+    path: Assets/Scenes/Sala3.unity
+    guid: 46d08806bdbf1b64186b9194671d0e04
   - enabled: 1
     path: Assets/Scenes/QuizSala1.unity
     guid: 8e8f9547916b82348a4c838a8888f330
