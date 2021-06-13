@@ -633,10 +633,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 290070723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a64ae9cefef5546b6cfc2ae6f0e5c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 967444a8b1edc8a469a39d0cebeac580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Scene: QuizSala3
+  Scene: QuizSala3
 --- !u!1 &346280429
 GameObject:
   m_ObjectHideFlags: 0
@@ -3525,10 +3525,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1707348575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a64ae9cefef5546b6cfc2ae6f0e5c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 967444a8b1edc8a469a39d0cebeac580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Scene: Puzzle3
+  Scene: Puzzle3
 --- !u!1 &1771132401
 GameObject:
   m_ObjectHideFlags: 0

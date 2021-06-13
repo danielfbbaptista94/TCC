@@ -1,24 +1,24 @@
 
 imagens do jogo:
 
-	fisico1 -> http://userscontent2.emaze.com/images/668c2ca8-8cd4-4848-85f6-82f36effa11c/08e861b3-5773-450c-a821-cbd96f8fba18.jpg
+	fisico1 -> https://br.freepik.com/vetores-gratis/os-povos-irritados-que-lutam-e-intimidacao_1046833.htm#page=7&query=bullying&position=45
 	
-	fisico2 -> https://sites.google.com/site/convivenciaarmonicaenlaescuela/_/rsrc/1407276321309/formas-de-agresion-escolar/bullying-fisico/2.jpg?height=489&width=491
+	fisico2 -> https://br.freepik.com/vetores-gratis/pare-o-conceito-de-bullying_9058947.htm#page=2&query=bullying&position=40
 	
-	fisico3 -> https://cultura.culturamix.com/blog/wp-content/gallery/como-ajudar-criancas-vitimas-de-bullying-2-1/Como-Ajudar-Criancas-Vitimas-de-Bullying-3.jpg
-	
-	
-	psicologico1 -> https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlE2Dz9Apy8N704E0AcoenXe6o9CuAP51dk5oxknf4wwD2ThL989q5PjhRKmlnim2dm3s&usqp=CAU
-	
-	psicologico2 -> https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSisJoyth8FXF8ONfKvlEeoSvngVXeeCovvBMh6_ZDnWXXOil_CdjnzrONWPmtmlvAG8tg&usqp=CAU
-	
-	psicologico3 -> https://blog.portabilis.com.br/wp-content/uploads/2018/08/185941-como-abordar-o-bullying-em-sala-de-aula.jpg
+	fisico3 -> https://br.freepik.com/vetores-premium/tipos-de-ilustracao-de-bullying-colecao-com-assedio-social_7807095.htm#page=1&query=bullying%20fisico&position=40
 	
 	
-	virtual1 -> https://www.olideremmim.com.br/wp-content/uploads/2020/10/cyberbullying-lider.jpg
+	psicologico1 -> https://br.freepik.com/vetores-premium/tipos-de-ilustracao-de-bullying-colecao-com-assedio-social_7807095.htm#page=1&query=bullying%20fisico&position=40
 	
-	virtual2 -> https://www.olideremmim.com.br/wp-content/uploads/2020/10/bullying-virtual-lider.jpg
+	psicologico2 -> https://br.freepik.com/vetores-gratis/jovem-sendo-intimidado-por-causa-de-sua-cor-de-pele_8803679.htm#page=1&query=bullying%20&position=29
 	
-	virtual3 -> https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXzeDD9kPU0JERel0L-nBNr66juDIL8DGjZw&usqp=CAU
+	psicologico3 -> https://br.freepik.com/vetores-premium/tipos-de-ilustracao-de-bullying-colecao-com-assedio-social_7807095.htm#page=1&query=bullying%20fisico&position=40
+	
+	
+	virtual1 -> https://br.freepik.com/vetores-gratis/conceito-de-cyber-bullying_8851845.htm#page=1&query=bullying%20virtual&position=1
+	
+	virtual2 -> https://br.freepik.com/vetores-premium/tipos-de-ilustracao-de-bullying-colecao-com-assedio-social_7807095.htm#page=1&query=bullying%20fisico&position=40
+	
+	virtual3 -> https://br.freepik.com/vetores-gratis/conceito-de-ilustracao-de-cyber-bullying_8918555.htm#page=1&query=bullying%20virtual&position=2
 	
 	
