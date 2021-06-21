@@ -25,4 +25,9 @@ public class SceneChange : MonoBehaviour
         if (other.CompareTag("Player"))
             playerInRange = false;
     }
+
+    public void ClickReturnMenu()
+    {
+        SceneManager.LoadScene(Scene);
+    }
 }
